@@ -6,7 +6,7 @@ This program (made with python 3) derives the number pi (3.14159... etc.) from P
                 Pascal's Triangle
 
 
-                ![alt text](https://github.com/falconite400/piFromPascal/blob/main/triangle.jpg?raw=true)
+                ![alt text](https://miro.medium.com/v2/resize:fit:958/1*7g4Dq4vhGVT5Prn-AYbL5A.jpeg)
 Each number in the triangle is calculated by adding together the two numbers above it. 
 
 Pi is derived from Pascal's triangle by taking the reciprocal of the third number of each row (excluding the first
