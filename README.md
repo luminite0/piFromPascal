@@ -12,13 +12,10 @@ two rows), changing the sign of each fraction by alternating between two positiv
 with positive (+ + - - + + - - etc.), adding the fractions together, and them adding two to the sum.
 
 For example, the first few reciprocals would be:
-![alt text](https://github.com/falconite400/piFromPascal/blob/main
-Applying the + + - - part, we have
+![alt text](https://github.com/falconite400/piFromPascal/blob/main/images/fractions.jpg?raw=true)
 
-        1    1    1    1    1    1    1    1    1    1
-      + -  + -  - -  - -  + -  + -  - -  - -  + -  + -
-        1    3    6    10   15   21   28   36   45   55
-
+Applying the + + - - part, we have:
+![alt text](https://github.com/falconite400/piFromPascal/blob/main/images/fractions_alternating.jpg?raw=true)
                               
 Adding these together yeilds approximately 1.15786435786.
 
