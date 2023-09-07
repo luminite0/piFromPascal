@@ -1,86 +1,43 @@
-'''
-num = 1
-thing = 2
-mylist = [1]
-# get all the third terms
-for i in range(100000):
-    num += thing
-    mylist.append(num)
-    thing += 1
+# Pi from Pascal's triangle
 
-# take the reciprocal of each term
-for i in range(len(mylist)):
-    mylist[i] = 1 / mylist[i]
-# set up a counter that makes the signs of the terms ++--++--++--++--etc.
-thing = 0
-for k in range(len(mylist)):
+num_third_terms = 10000000 # number of third terms to use (larger num = more accurate)
+third_num = 0 # the current third number which will be worked on
+increment = 1 # the amount by which to increment the third_num to get the next third_num
+alternating_count = 0 # a number to help determine if the sign of the number should be + or -
+end_sum = 0 # the end result 
 
-    if thing == 0:
-        thing += 1
-       
-    elif thing == 1:
-        thing += 1
-        
-    elif thing == 2:
-        mylist[k] *= -1
-        thing += 1
-        
-    elif thing == 3:
-        mylist[k] *= -1
-        thing = 0
-        
+for i in range(num_third_terms):
+    # each third number can be represented as (previous third number) plus (counter + 1); 
+    # the counter starts at 1 and increments each time, so it will be (prev) + 1, (prev) + 2, etc.
+
+    third_num += increment # add the increment to the current third number
+    increment += 1 # increment the increment by one
+
+    copy_of_third = third_num
+    copy_of_third = 1 / copy_of_third # take reciprocal of the current third number
+
+    if alternating_count == 0:
+        # third_num's sign is positive if count is 0 or 1
+        end_sum += copy_of_third # add third_num to the result
+        alternating_count += 1
+
+    elif alternating_count == 1:
+        end_sum += copy_of_third
+        alternating_count += 1
+
+    elif alternating_count == 2:
+        copy_of_third *= -1 # change the sign of third_num is count is 2 oe 3
+        end_sum += copy_of_third
+        alternating_count += 1
+
+    elif alternating_count == 3:
+        copy_of_third *= -1
+        end_sum += copy_of_third
+        alternating_count = 0 # reset the count
+
     else:
-        pass
-# print the terms
-print(mylist)
-answer = 0
-# add the terms
-for item in range(len(mylist)):
-    answer += mylist[item]
-# display the terms
-closeToPi = answer + 2
-print('\n\n\n\n\n\n\n', 'Here is the number (very close to pi):')
-print(closeToPi, '\n\n\n')
+        print("ERROR u fool you broke something")
 
+end_sum += 2 # the final step! now it's (close to) pi
 
-# the other way to do it
-'''
-
-
-num = 0
-addNum = 1
-mylist = []
-i = 0
-count = 0
-endSum = 0
-for i in range(10000000000):
-    # get third term
-    num += addNum
-    mylist.append(num)
-    addNum += 1
-    # take reciprocal of each number
-    mylist[0] = 1 / mylist[0]
-    # ++--++-- etc.
-    if count == 0:
-        mylist[0] *= 1
-        endSum += mylist[0]
-        del(mylist[0])
-        count += 1
-    elif count == 1:
-        mylist[0] *= 1
-        endSum += mylist[0]
-        del(mylist[0])
-        count += 1
-    elif count == 2:
-        mylist[0] *= -1
-        endSum += mylist[0]
-        del(mylist[0])
-        count += 1
-    elif count == 3:
-        mylist[0] *= -1
-        endSum += mylist[0]
-        del(mylist[0])
-        count = 0
-    else:
-        print("ERROR")
-print(endSum + 2)
+print(end_sum)
