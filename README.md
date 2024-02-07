@@ -19,7 +19,7 @@ Applying the + + - - part, we have
 
 Adding these together yeilds approximately 1.14207181707.
 
-Adding 2 to this yeilds 3.14207181707, which is close to pi.
+Adding 2 to this yeilds 3.14207181707, which is equal to pi to 2 decimal places.
 
 The more numbers are used, the more accurate the result is. For example, when 10,000 numbers are used in the program,
 the result is 3.141592633593785, which is much more accurate than the previous example.
