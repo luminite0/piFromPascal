@@ -26,7 +26,7 @@ for i in range(num_third_terms):
         alternating_count += 1
 
     elif alternating_count == 2:
-        copy_of_third *= -1 # change the sign of third_num is count is 2 oe 3
+        copy_of_third *= -1 # change the sign of third_num is count is 2 or 3
         end_sum += copy_of_third
         alternating_count += 1
 
@@ -36,8 +36,8 @@ for i in range(num_third_terms):
         alternating_count = 0 # reset the count
 
     else:
-        print("ERROR u fool you broke something")
+        print("somehow you broke this")
 
-end_sum += 2 # the final step! now it's (close to) pi
+end_sum += 2 # the final step! add 2 because the answer is (approximately) 2 less than pi
 
 print(end_sum)
